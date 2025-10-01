@@ -20,8 +20,8 @@
   "d1_databases": [
     {
       "binding": "D1",
-      "database_id": "720b46b0-3f30-4768-9b2c-3dbcad43ff44",
-      "database_name": "cloudflare-test",
+      "database_id": "1f45c2de-72ad-42cc-a909-24f709b28660",
+      "database_name": "cloudflare-test2",
       "remote": true,
     },
   ],

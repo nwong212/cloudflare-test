@@ -1,19 +1,20 @@
+import type { NextConfig } from 'next'
 import { withPayload } from '@payloadcms/next/withPayload'
 import { initOpenNextCloudflareForDev } from '@opennextjs/cloudflare'
 
-initOpenNextCloudflareForDev({ environment: process.env.CLOUDFLARE_ENV })
+initOpenNextCloudflareForDev()
 
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+const nextConfig: NextConfig = {
   // Your Next.js config here
-  webpack: (webpackConfig: any) => {
-    webpackConfig.resolve.extensionAlias = {
+  webpack: (config, options) => {
+    config.resolve.extensionAlias = {
+      ...config.resolve.extensionAlias,
       '.cjs': ['.cts', '.cjs'],
       '.js': ['.ts', '.tsx', '.js', '.jsx'],
       '.mjs': ['.mts', '.mjs'],
     }
 
-    return webpackConfig
+    return config
   },
 }
 
